@@ -53,4 +53,21 @@ fs.stat("module.txt",(err,stat)=>{
     }
     })
 
-    
+    //reading directory
+    fs.readdir(".",(err,files)=>{
+        if(err){
+            console.error("Error in creating directory",err)
+
+        }else{
+            console.log("Files in directory",files)
+        }
+    });
+
+    //removing directory
+    fs.rmdir("new-directory",(err)=>{
+        if (err) {
+            console.error("Error in removing directory",err)
+        } else {
+            console.log("Directory removed successfully..")
+        }
+    });
